@@ -1,2 +1,3 @@
-console.log("Hello!")
-console.log("AyO!")
+const car = require("./car")
+
+console.log(car)
