@@ -1,15 +1,15 @@
-console.log("Starting")
 
-function task(func){
-    console.log("task started")
-    setTimeout(func, 1)
-
+function task(cb) {          // cb is the callback func
+    setTimeout(() => {
+        cb(null, "data")    // first argument null means no error
+    }, 0)
 }
 
-task(function callback(){
-    console.log(name)
+task((err, data) => {     // error is the first argument for our cb func
+    if (err) {
+        throw err
+    } else {
+        console.log("data", data)
+    }
 })
 
-const name = "ferdouse"
-
-console.log("Ended")
